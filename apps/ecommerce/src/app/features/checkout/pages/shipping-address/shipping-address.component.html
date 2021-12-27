@@ -1,0 +1,7 @@
+<p>shipping-address works!</p>
+<roinsight-title no="3" title="Shipping Address" subtitle="Address to ship package to"></roinsight-title>
+<roinsight-address-list *ngIf="showAddresses" (setAddressEvent)="setCustomerAddress($event)"></roinsight-address-list>
+<mat-divider *ngIf="showAddresses"></mat-divider>
+<roinsight-address [showTitle]="showAddresses" buttonText="PROCEED TO SHIPPING METHODS"
+    checkboxText="Bill to the same address" (isCheckboxChecked)="setSameBillingAddressAsShipping($event)"
+    (createAddress)="updateShippingAddress($event)"></roinsight-address>

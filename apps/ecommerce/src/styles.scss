@@ -1,0 +1,98 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ecommerce-primary: mat.define-palette(mat.$indigo-palette);
+$ecommerce-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$ecommerce-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$ecommerce-theme: mat.define-light-theme((
+  color: (
+    primary: $ecommerce-primary,
+    accent: $ecommerce-accent,
+    warn: $ecommerce-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($ecommerce-theme);
+
+// /* You can add global styles to this file, and also import other style files */
+
+// @use '@angular/material' as mat;
+
+// // @use 'sass:map';
+
+// // 213b52
+// $dark-primary-text: rgba(black, 0.87);
+// $light-primary-text: white;
+
+// $roinsight-palette: (
+//   50: #e1eeff,
+//   100: #bfd4e9,
+//   200: #9fb6cf,
+//   300: #7d99b5,
+//   400: #6583a1,
+//   500: #4b6e8f,
+//   600: #3e607e,
+//   700: #2f4d68,
+//   800: #213b52,
+//   900: #0e273a,
+//   A100: #bfd4e9,
+//   A200: #4d6274,
+//   A400: #213b52,
+//   A700: #172939,
+//   contrast: (
+//     50: $dark-primary-text,
+//     100: $dark-primary-text,
+//     200: $dark-primary-text,
+//     300: $dark-primary-text,
+//     400: $dark-primary-text,
+//     500: $light-primary-text,
+//     600: $light-primary-text,
+//     700: $light-primary-text,
+//     800: $light-primary-text,
+//     900: $light-primary-text,
+//     A100: $dark-primary-text,
+//     A200: $dark-primary-text,
+//     A400: $dark-primary-text,
+//     A700: $dark-primary-text
+//   )
+// );
+
+// @include mat.core();
+
+// $roinsight-primary: mat.define-palette($roinsight-palette, 800, 300, 900);
+// $roinsight-accent: mat.define-palette(mat.$amber-palette, 500);
+// $roinsight-warn: mat.define-palette(mat.$pink-palette, 600);
+// $roinsight-theme: mat.define-light-theme($roinsight-primary, $roinsight-accent, $roinsight-warn);
+
+// @mixin custom-components-theme($theme) {
+//     // @include roinsight-home-component-theme($theme);
+   
+//   };
+  
+//   .default-theme {
+//     @include mat.all-component-themes($roinsight-theme);
+//     @include custom-components-theme($roinsight-theme);
+//   };
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

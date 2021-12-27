@@ -1,0 +1,4 @@
+<p>payment works!</p>
+<roinsight-simple-page number="5" title="Payment" subtitle="Pay for your order" buttonText="PROCEED TO PAY WITH PAYPAL"
+    icon="point_of_sale" (buttonEvent)="navigateToPaypal()" [buttonDisabled]="approvalUrl.length ? false : true">
+</roinsight-simple-page>

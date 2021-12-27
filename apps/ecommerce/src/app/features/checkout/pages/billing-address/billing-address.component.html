@@ -1,0 +1,7 @@
+<p>billing-address works!</p>
+<roinsight-title no="2" title="Billing Address" subtitle="Address to bill charges to"></roinsight-title>
+<roinsight-address-list *ngIf="showAddresses" (setAddressEvent)="setCustomerAddress($event)"></roinsight-address-list>
+<mat-divider *ngIf="showAddresses"></mat-divider>
+<roinsight-address [showTitle]="showAddresses" buttonText="PROCEED TO NEXT STEP" checkboxText="Ship to the same address"
+    (isCheckboxChecked)="setSameShippingAddressAsBilling($event)" (createAddress)="updateBillingAddress($event)">
+</roinsight-address>
